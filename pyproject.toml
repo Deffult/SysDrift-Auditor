@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sysdrift-auditor"
+version = "1.0.0"
+description = "Golden-baseline configuration drift auditor for Linux hosts."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "Ahmed A. Ahmed (Mr. Deffult)" }]
+keywords = ["security", "linux", "drift", "baseline", "audit", "hardening", "integrity"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Topic :: Security",
+    "Topic :: System :: Systems Administration",
+]
+dependencies = [
+    "PyYAML>=6.0.1",
+    "cryptography>=42.0.0",
+]
+
+[project.scripts]
+sysdrift = "sysdrift.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["sysdrift*"]
